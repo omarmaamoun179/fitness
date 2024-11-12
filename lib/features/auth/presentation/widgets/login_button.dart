@@ -5,12 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({
-    super.key,
+    super.key, this.onTap,
   });
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return CustomButton(
+      onTap:onTap,
         borderRadius: 8.r,
         width: 361.w,
         height: 48.h,

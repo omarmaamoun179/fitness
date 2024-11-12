@@ -8,7 +8,7 @@ class Routes {
   static const login = '/login';
   static const register = '/register';
   static const forgotPassword = '/forgot-password';
-  static const verifyOtp = '/verify-otp';
+  static const verifyEmailOtp = '/verify-email-otp';
   static const changePassword = '/change-password';
   static const welcome = '/welcome';
 
