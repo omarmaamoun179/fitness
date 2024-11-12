@@ -1,4 +1,3 @@
-
 import 'package:fitness/config/app_colors.dart';
 import 'package:fitness/config/styles.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +58,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       onTap: onPressed,
       cursorColor: AppColors.secondary,
-      style: Styles.style12W400LabelTextField,
+      style: Styles.style12W500,
       obscuringCharacter: '*',
       autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: keyboardType ?? TextInputType.text,
@@ -81,18 +80,18 @@ class CustomTextField extends StatelessWidget {
         focusColor: AppColors.secondary,
         border: outLineInputBorder(),
 
-        contentPadding: EdgeInsets.all(10.w),
-        fillColor: Colors.transparent,
+        contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
+        fillColor: Colors.white,
         filled: fiiledColor ?? true,
         hintText: hint,
         labelText: label,
-        labelStyle: Styles.style12W400LabelTextField,
+        labelStyle: Styles.hintStyle12W500,
 
         // label: Padding(
         //   padding: EdgeInsets.symmetric(horizontal: 9.0.w),
         //   child: Text(lable),
         // ),
-        hintStyle: Styles.style12W400LabelTextField,
+        hintStyle: Styles.hintStyle12W500,
         prefixIcon: prefixIcon,
         suffixIcon: IconButton(
             onPressed: onPressed, icon: suffixIcon ?? const Text('')),
@@ -108,7 +107,7 @@ class CustomTextField extends StatelessWidget {
 
 OutlineInputBorder outLineInputBorder() {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(6.r),
-    borderSide: BorderSide(color: AppColors.secondary, width: .5.w),
+    borderRadius: BorderRadius.circular(8.r),
+    borderSide: BorderSide(color: const Color(0xffD4D5D4), width: .6.w),
   );
 }

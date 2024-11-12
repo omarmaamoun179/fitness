@@ -12,6 +12,10 @@ class CustomButton extends StatelessWidget {
     this.height,
     this.bordercolor,
     this.borderRadius,
+    this.padding,
+    this.margin,
+    this.linearColor1,
+    this.linearColor2,
   });
   final Widget widget;
   final Color? color;
@@ -20,15 +24,28 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+  final Color? linearColor1;
+  final Color? linearColor2;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width ?? 361.w,
-        height: height ?? 44.h,
+        padding: padding,
+        margin: margin,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
+            gradient: linearColor1 != null && linearColor2 != null
+                ? LinearGradient(
+                    colors: [linearColor1!, linearColor2!],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  )
+                : null,
             border: Border.all(
                 color: bordercolor ?? AppColors.secondary, width: 1.w),
             borderRadius: BorderRadius.circular(borderRadius ?? 5.r),

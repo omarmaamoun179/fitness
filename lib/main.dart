@@ -1,4 +1,8 @@
+import 'package:fitness/config/routes/app_routes.dart';
+import 'package:fitness/config/routes/routes.dart';
+import 'package:fitness/config/theme/light_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(
@@ -11,19 +15,20 @@ class FitnessAp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fitness App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Fitness App'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+    return ScreenUtilInit(
+      ensureScreenSize: true,
+      designSize: const Size(393, 852),
+      enableScaleText: () => true,
+      minTextAdapt: true,
+      splitScreenMode: true,
+      useInheritedMediaQuery: true,
+      child: MaterialApp(
+          title: 'Fitness App',
+          theme: AppTheme.lightTheme,
+          themeMode: ThemeMode.system,
+          darkTheme: AppTheme.darkTheme,
+          initialRoute: Routes.onBoarding,
+          onGenerateRoute: AppRoutes.onGenerate),
     );
   }
 }

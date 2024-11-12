@@ -75,14 +75,14 @@ extension ListExtension<T> on List<T>? {
             backgroundColor: Colors.white,
             title: Text(
               "Error",
-              style: Styles.style16W500.copyWith(color: Colors.red),
+              style: Styles.style10W400Grey.copyWith(color: Colors.red),
             ),
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   errorMessage,
-                  style: Styles.style12W500AboveTextField.copyWith(
+                  style: Styles.style10W400.copyWith(
                     color: AppColors.primary,
                   ),
                 ),
@@ -95,7 +95,7 @@ extension ListExtension<T> on List<T>? {
                 },
                 child: Text(
                   "Ok",
-                  style: Styles.style11W700WhiteColor.copyWith(
+                  style: Styles.style10W400Grey.copyWith(
                     color: AppColors.primary,
                   ),
                 ),
