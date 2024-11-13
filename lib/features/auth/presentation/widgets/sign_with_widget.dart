@@ -16,7 +16,7 @@ class SignWithWidget extends StatelessWidget {
         color: Colors.white,
         bordercolor: const Color(0xffD4D5D4),
         borderRadius: 8.r,
-        width: 361.w,
+        width: double.infinity,
         height: 48.h,
         widget: Row(
           mainAxisAlignment: MainAxisAlignment.center,

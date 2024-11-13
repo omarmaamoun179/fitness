@@ -20,64 +20,75 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: Column(
-          children: [
-            verticalSpace(67),
-            const Align(
-              alignment: Alignment.center,
-              child: HeadTextWidget(
-                text1: "\"Welcome Back!\"",
-                text2:
-                    "Log in to continue with your AI trainer and reach your goals.",
-              ),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.sizeOf(context).height,
+          ),
+          child: IntrinsicHeight(
+            child: Column(
+              children: [
+                verticalSpace(67),
+                const Align(
+                  alignment: Alignment.center,
+                  child: HeadTextWidget(
+                    text1: "\"Welcome Back!\"",
+                    text2:
+                        "Log in to continue with your AI trainer and reach your goals.",
+                  ),
+                ),
+                verticalSpace(40),
+                const TextAboveTextFieldWidget(
+                    image: "assets/svg/phone_number.svg", text: "Phone Number"),
+                verticalSpace(12),
+                CustomTextField(
+                  controller: TextEditingController(),
+                  hint: "Write here",
+                ),
+                verticalSpace(16),
+                const TextAboveTextFieldWidget(
+                    image: "assets/svg/password.svg", text: "Password"),
+                verticalSpace(12),
+                CustomTextField(
+                  controller: TextEditingController(),
+                  hint: "Write here",
+                ),
+                verticalSpace(8),
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: GestureDetector(
+                      onTap: () => context.pushNamed(Routes.forgotPassword),
+                      child:
+                          Text("Forget Password?", style: Styles.style12W700)),
+                ),
+                verticalSpace(40),
+                const LoginButton(),
+                verticalSpace(16),
+                CreateAccountText(
+                  onTap: () => context.pushNamed(Routes.register),
+                ),
+                verticalSpace(40),
+                const OrWidget(),
+                verticalSpace(12),
+                const SignWithWidget(
+                  image: "assets/svg/google.svg",
+                  text: "Continue with Google",
+                ),
+                verticalSpace(8),
+                const SignWithWidget(
+                  image: "assets/svg/facebook.svg",
+                  text: "Continue with Facebook",
+                ),
+                verticalSpace(8),
+                const SignWithWidget(
+                  image: "assets/svg/mail.svg",
+                  text: "Continue with Email",
+                ),
+                const Spacer(),
+                const AllsafeImage(),
+                verticalSpace(28)
+              ],
             ),
-            verticalSpace(40),
-            const TextAboveTextFieldWidget(
-                image: "assets/svg/phone_number.svg", text: "Phone Number"),
-            verticalSpace(12),
-            CustomTextField(
-              controller: TextEditingController(),
-              hint: "Write here",
-            ),
-            verticalSpace(16),
-            const TextAboveTextFieldWidget(
-                image: "assets/svg/password.svg", text: "Password"),
-            verticalSpace(12),
-            CustomTextField(
-              controller: TextEditingController(),
-              hint: "Write here",
-            ),
-            verticalSpace(8),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: Text("Forget Password?", style: Styles.style12W700),
-            ),
-            verticalSpace(40),
-            const LoginButton(),
-            verticalSpace(16),
-            CreateAccountText(
-              onTap: () => context.pushNamed(Routes.register),
-            ),
-            verticalSpace(40),
-            const OrWidget(),
-            verticalSpace(12),
-            const SignWithWidget(
-              image: "assets/svg/google.svg",
-              text: "Continue with Google",
-            ),
-            verticalSpace(8),
-            const SignWithWidget(
-              image: "assets/svg/facebook.svg",
-              text: "Continue with Facebook",
-            ),
-            verticalSpace(8),
-            const SignWithWidget(
-              image: "assets/svg/mail.svg",
-              text: "Continue with Email",
-            ),
-            verticalSpace(116),
-            const AllsafeImage()
-          ],
+          ),
         ),
       ),
     );

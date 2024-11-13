@@ -1,7 +1,10 @@
 import 'package:fitness/config/routes/routes.dart';
+import 'package:fitness/features/auth/presentation/pages/email_verfifcation_success.dart';
+import 'package:fitness/features/auth/presentation/pages/forget_password_screen.dart';
 import 'package:fitness/features/auth/presentation/pages/login_screen.dart';
 import 'package:fitness/features/auth/presentation/pages/otp_email_verfication_screen.dart';
 import 'package:fitness/features/auth/presentation/pages/register_screen.dart';
+import 'package:fitness/features/auth/presentation/pages/reset_password_screen.dart';
 import 'package:fitness/features/onboadring/presentation/pages/on_boadring_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -26,12 +29,36 @@ class AppRoutes {
           settings: settings,
         );
 
-        case Routes.verifyEmailOtp:
+      case Routes.verifyEmailOtp:
         return PageTransition(
-          child: const OtpEmailVerificationScreen(),
+          child: OtpEmailVerificationScreen(
+            emailOrPassword: settings.arguments as String,
+          ),
           type: PageTransitionType.rightToLeftWithFade,
           settings: settings,
         );
+
+      case Routes.forgotPassword:
+        return PageTransition(
+          child: const ForgetPasswordScreen(),
+          type: PageTransitionType.rightToLeftWithFade,
+          settings: settings,
+        );
+
+      case Routes.emailVerificationSuccess:
+        return PageTransition(
+          child:  EmailVerificationSuccessScreen(
+            isEmail: settings.arguments as bool,
+          ),
+          type: PageTransitionType.bottomToTop,
+          settings: settings,
+        );
+
+      case Routes.resetPassword:
+        return PageTransition(
+            alignment: Alignment.bottomCenter,
+            child: const ResetPasswordScreen(),
+            type: PageTransitionType.scale);
       default:
         onUnknownRoute(settings);
 

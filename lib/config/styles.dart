@@ -52,6 +52,7 @@ class Styles {
   static TextStyle style12W700Green = GoogleFonts.roboto(
       fontSize: 12.sp,
       fontWeight: FontWeight.w700,
+      
       color: const Color(0xff4FDB74));
 
   static TextStyle style14W700 = GoogleFonts.roboto(

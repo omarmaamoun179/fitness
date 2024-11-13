@@ -1,14 +1,13 @@
 class Routes {
   static const onBoarding = '/onBoarding';
 
-  
-
-
   //Auth
   static const login = '/login';
   static const register = '/register';
   static const forgotPassword = '/forgot-password';
   static const verifyEmailOtp = '/verify-email-otp';
+  static const emailVerificationSuccess = '/verify-success-email';
+  static const resetPassword = '/reset-password';
   static const changePassword = '/change-password';
   static const welcome = '/welcome';
 
