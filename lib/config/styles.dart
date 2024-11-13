@@ -33,6 +33,12 @@ class Styles {
       fontWeight: FontWeight.w500,
       color: const Color(0xff3B434D));
 
+      
+  static TextStyle style12W500Black = GoogleFonts.roboto(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xff212831));
+
   static TextStyle hintStyle12W500 = GoogleFonts.roboto(
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,

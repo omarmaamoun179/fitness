@@ -35,6 +35,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  ruler_scale_picker: ^0.1.0
+
   flutter_native_splash: ^2.4.2
   flutter_otp_text_field: ^1.2.0
   flutter_screenutil: ^5.9.3
@@ -45,8 +47,10 @@ dependencies:
   hexcolor: ^3.0.1
   page_transition: ^2.1.0
   pin_code_fields: ^8.0.1
+  ruler_slider: ^0.0.5
   shared_preferences: ^2.3.3
   simplest_service_locator: ^0.0.4
+  vertical_weight_slider: ^2.6.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0

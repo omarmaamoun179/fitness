@@ -9,7 +9,11 @@ class Routes {
   static const emailVerificationSuccess = '/verify-success-email';
   static const resetPassword = '/reset-password';
   static const changePassword = '/change-password';
-  static const welcome = '/welcome';
+
+  //requirements
+  static const setGender = "setGender";
+  static const setBirthDate = "setBirthDate";
+  static const setMeasurement = "setMeasurement";
 
   //Profile
   static const profile = '/profile';
